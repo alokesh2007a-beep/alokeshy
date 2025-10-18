@@ -1,0 +1,30 @@
+doucment.addEventListener("DOMContentLoaded",()=>{
+	const loginForm=document.getElementById("loginForm");
+	if (loginForm){
+		loginForm.addEventListener("submit",function(e){
+			e.preventDefault();
+			
+			const name=document.getElementById("studentName").value;
+			const id=document.getElementById("studentid").value;
+			const teacher=document.getElementById("teacherName").value;
+			const password=document.getElementById("examPassword").value;
+			
+			if(password==="exam123"){
+				sessionStorage.setItem("studentName",name);
+				window.location.href="exam.html";
+			}else{
+				alert("Invalid exam password!");
+			}
+		});
+	}	
+	const examForm=document.getElementById("examForm");
+	if(examForm){
+		examForm.addEventListener("submit",function(e){
+			e.preventDefault();
+			let score=0;
+		if(document.querySelector('input[name="q1"]:checked')?.value==="Paris")score++;
+		if(document.querySelector('input[name="q2"]:checked')?.value==="javaScript")score++;
+		window.location.herf='result.html?score=${score}';
+		});
+	}
+});

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>exam result</title>
+<link rel="stylesheet"href="style.css">
+</head>
+<body class="result-page">
+<div class="result-container">
+<h2>exam result</h2>
+<p id="resulttext">calulating result..</p>
+<a hre="index.html">take exam again</a>
+</div>
+<script>
+const params=new URLSearchparams(window.location.search);
+const score=params.get("score");
+document.getElementByld("resulttext").innertext=your score is ${score}/2;
+</script>
+</body>
+</html>
